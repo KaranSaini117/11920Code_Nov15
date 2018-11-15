@@ -118,6 +118,7 @@ public class wallTracking extends LinearOpMode {
     private double GAIN = 0.05; // Needs tuning to find right scaling factor. Start low like 0.023 then increase or at least find a value in which your robot stops oscillating sharply.
 
     //drive along wall
+
     public void driveAlongWall()
     {
         double leftFrontPower = 0;

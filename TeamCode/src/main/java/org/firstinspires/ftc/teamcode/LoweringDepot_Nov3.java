@@ -5,9 +5,9 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@Autonomous(name = "LowerCrater", group = "11920")
+@Autonomous(name = "LowerDepot_Nov3", group = "11920")
 
-public class LoweringCrater extends LinearOpMode {
+public class LoweringDepot_Nov3 extends LinearOpMode {
     private DcMotor leftFront = null;
     private DcMotor rightFront = null;
     private DcMotor leftBack = null;
@@ -47,6 +47,8 @@ public class LoweringCrater extends LinearOpMode {
 
         lift.setPower(0);
 
+
+
         waitForStart();
 
         while (opModeIsActive()) {
@@ -64,15 +66,27 @@ public class LoweringCrater extends LinearOpMode {
 
             sleep(100);
 
-            forwardDist(0.4,4);
+            forwardDist(0.4,30);
 
             sleep(100);
 
-            turnDeg(0.4,0.17);
+            turnDeg(0.4,0.55);
 
             sleep(100);
 
-            forwardDist(0.4,40);
+            forwardDist(0.4,30);
+
+            sleep(100);
+
+            turnDeg(0.4,1.35);
+
+            marker.setPosition(0.65);
+
+            sleep(1000);
+
+            marker.setPosition(0);
+
+            forwardDist(0.4,94);
 
             sleep(30000);
 
@@ -120,7 +134,7 @@ public class LoweringCrater extends LinearOpMode {
     0.5 rotations ~ 85 deg
     0.75 rotations ~ 120-125 deg
     1 rotation ~ 135-140 deg
-    Not recommended to make rotations any larger. It will become inaccurate.
+    Not recommended to make rotations any larger. It will become inaccurate. Ok got it
     */
 
     public void turnDeg(double power, double rot){
