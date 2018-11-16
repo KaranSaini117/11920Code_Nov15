@@ -128,10 +128,10 @@ public class wallTracking extends LinearOpMode {
         double error = rangeSensor.getDistance(DistanceUnit.INCH) - 15;
         if(error < TOLERANCE)  //The robot is too close to the wall
         {
-            leftFrontPower = -GAIN * error;
+            leftFrontPower = (GAIN * error);
             leftBackPower = GAIN * error;
-            rightFrontPower = GAIN * error;
-            rightBackPower = -GAIN * error;
+            rightFrontPower = (GAIN * error) + GAIN;
+            rightBackPower = (GAIN * error) + GAIN;
         } else if(error > TOLERANCE)  //The robot is too far away
         {
             leftFrontPower = GAIN * error;
