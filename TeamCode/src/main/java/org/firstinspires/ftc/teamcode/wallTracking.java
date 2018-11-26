@@ -114,7 +114,7 @@ public class wallTracking extends LinearOpMode {
             telemetry.update();
         }
     }
-    private double TOLERANCE = 0.25;
+    private double TOLERANCE = 2;
     private double GAIN = 0.05; // Needs tuning to find right scaling factor. Start low like 0.023 then increase or at least find a value in which your robot stops oscillating sharply.
 
     //drive along wall
@@ -130,21 +130,32 @@ public class wallTracking extends LinearOpMode {
         double error = rangeSensor.getDistance(DistanceUnit.INCH) - 15;
         if(error < TOLERANCE)  //The robot is too close to the wall
         {
+            telemetry.addLine("Too close");
+            telemetry.update();
+            /*
             leftFrontPower = (GAIN * error);
             leftBackPower = GAIN * error;
             rightFrontPower = (GAIN * error) + GAIN;
             rightBackPower = (GAIN * error) + GAIN;
+            */
         } else if(error > TOLERANCE)  //The robot is too far away
         {
+            telemetry.addLine("Too far");
+            telemetry.update();
+            /*
             leftFrontPower = GAIN * error;
             leftBackPower = -GAIN * error;
             rightFrontPower = -GAIN * error;
             rightBackPower = GAIN * error;
+            */
         } else {
-            leftFrontPower = 0.5;
-            leftBackPower = 0.5;
-            rightFrontPower = 0.5;
-            rightBackPower = 0.5;
+//            leftFrontPower = 0.5;
+//            leftBackPower = 0.5;
+//            rightFrontPower = 0.5;
+//            rightBackPower = 0.5;
+            telemetry.addLine("close enough");
+            telemetry.update();
+
         }
         leftBack.setPower(leftBackPower);
         leftFront.setPower(leftFrontPower);
