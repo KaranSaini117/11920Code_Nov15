@@ -134,10 +134,10 @@ public class LoweringCrater_Nov3 extends LinearOpMode {
 
         }
         while (!stop){
-            LFdistance = Math.abs(leftFront.getCurrentPosition()/1680.0);
-            LBdistance = Math.abs(leftBack.getCurrentPosition()/1680.0);
-            RFdistance = Math.abs(rightFront.getCurrentPosition()/1680.0);
-            RBdistance = Math.abs(rightBack.getCurrentPosition()/1680.0);
+            LFdistance = Math.abs(leftFront.getCurrentPosition()/1120.0);
+            LBdistance = Math.abs(leftBack.getCurrentPosition()/1120.0);
+            RFdistance = Math.abs(rightFront.getCurrentPosition()/1120.0);
+            RBdistance = Math.abs(rightBack.getCurrentPosition()/1120.0);
             if (LFdistance >= rot){
                 leftFront.setPower(0);
             }
@@ -167,10 +167,10 @@ public class LoweringCrater_Nov3 extends LinearOpMode {
 
         }
         while (!stop) {
-            LFdistance = Math.abs(leftFront.getCurrentPosition()/1680.0 * Math.PI * diameter);
-            LBdistance = Math.abs(leftBack.getCurrentPosition()/1680.0 * Math.PI * diameter);
-            RFdistance = Math.abs(rightFront.getCurrentPosition()/1680.0 * Math.PI * diameter);
-            RBdistance = Math.abs(rightBack.getCurrentPosition()/1680.0 * Math.PI * diameter);
+            LFdistance = Math.abs(leftFront.getCurrentPosition()/1120.0 * Math.PI * diameter);
+            LBdistance = Math.abs(leftBack.getCurrentPosition()/1120.0 * Math.PI * diameter);
+            RFdistance = Math.abs(rightFront.getCurrentPosition()/1120.0 * Math.PI * diameter);
+            RBdistance = Math.abs(rightBack.getCurrentPosition()/1120.0 * Math.PI * diameter);
             if (LFdistance >= targetDistance){
                 leftFront.setPower(0);
             }
